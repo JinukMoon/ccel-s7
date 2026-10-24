@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications · CCEL · Seoul National University</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="_shared/brand/brand.css">
+<link rel="stylesheet" href="site.css">
+<script src="_shared/content.js" defer></script>
+<script src="common.js" defer></script>
+<script src="pubs.js" defer></script>
+</head>
+<body class="sub">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <a class="brand" href="index.html" aria-label="CCEL home">
+    <span class="ccel-logo-plate"><img class="ccel-logo" src="_shared/img/logo2.png" alt="CCEL logo" width="200" height="102"></span>
+  </a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><span class="menu-bars" aria-hidden="true"></span>Menu</button>
+  <nav id="nav" class="nav" aria-label="Main">
+    <a href="index.html#research">Research</a>
+    <a href="publications.html" aria-current="page">Publications</a>
+    <a href="members.html">People</a>
+    <a href="index.html#news">News</a>
+    <a href="index.html#join">Join Us</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="mast" aria-labelledby="h-pubs">
+    <div class="mast-media"><img src="_shared/scroll/hero_poster.webp" alt=""></div>
+    <div class="mast-text">
+      <h1 id="h-pubs">Publications</h1>
+      <p class="lede" id="pub-lede"></p>
+      <dl class="stats" id="pub-stats"></dl>
+    </div>
+  </section>
+
+  <div class="sheet">
+    <div class="sheet-in">
+      <div class="tabs" role="tablist" aria-label="Publication views">
+        <button class="tab" role="tab" type="button" id="tab-all" aria-controls="all" aria-selected="true">All publications<span class="n" id="n-all"></span></button>
+        <button class="tab" role="tab" type="button" id="tab-selected" aria-controls="selected" aria-selected="false" tabindex="-1">Selected<span class="n" id="n-sel"></span></button>
+        <button class="tab" role="tab" type="button" id="tab-covers" aria-controls="covers" aria-selected="false" tabindex="-1">Covers<span class="n" id="n-cov"></span></button>
+      </div>
+
+      <section class="panel-view" id="all" role="tabpanel" aria-labelledby="tab-all">
+        <form class="tool" role="search" id="tool" onsubmit="return false">
+          <label class="q">Search title, author or journal<input type="search" id="q" autocomplete="off" placeholder="e.g. exsolution, Moon, Nature"></label>
+          <label>Year<select id="f-year"><option value="">All years</option></select></label>
+          <label>Status<select id="f-status"><option value="">All statuses</option></select></label>
+          <label>Research area<select id="f-area"><option value="">All areas</option></select></label>
+          <label class="chk"><input type="checkbox" id="f-led"> Lab-led only</label>
+        </form>
+        <p class="count-line" id="count" aria-live="polite"></p>
+        <div class="pubwrap">
+          <nav class="years" id="years" aria-label="Jump to year"></nav>
+          <div id="list"></div>
+        </div>
+      </section>
+
+      <section class="panel-view" id="selected" role="tabpanel" aria-labelledby="tab-selected" hidden>
+        <h2 class="view-h">Selected publications</h2>
+        <p class="view-note">Pinned by the professor, labelled by research area.</p>
+        <div class="cites" id="sel-pins"></div>
+        <h2 class="view-h gap">Recent highlights</h2>
+        <p class="view-note" id="sel-rules"></p>
+        <div class="cites" id="sel-hl"></div>
+      </section>
+
+      <section class="panel-view" id="covers" role="tabpanel" aria-labelledby="tab-covers" hidden>
+        <h2 class="view-h">Journal covers</h2>
+        <p class="view-note">Complete covers, each linked to its paper. Back-cover pages are marked.</p>
+        <div class="cover-grid" id="cover-grid"></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="ft" id="footer"></footer>
+<noscript><p class="nojs">This page renders its content from the lab's data file and needs JavaScript.</p></noscript>
+</body>
+</html>

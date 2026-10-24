@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CCEL · Seoul National University</title>
+<meta name="description" content="Computational Catalysis and Emerging Materials Laboratory, Department of Materials Science and Engineering, Seoul National University.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="_shared/brand/brand.css">
+<link rel="stylesheet" href="site.css">
+<script src="_shared/content.js" defer></script>
+<script src="common.js" defer></script>
+<script src="stage.js" defer></script>
+<script src="home.js" defer></script>
+</head>
+<body class="home">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <a class="brand" href="index.html" aria-label="CCEL home">
+    <span class="ccel-logo-plate"><img class="ccel-logo" src="_shared/img/logo2.png" alt="CCEL logo" width="200" height="102"></span>
+  </a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><span class="menu-bars" aria-hidden="true"></span>Menu</button>
+  <nav id="nav" class="nav" aria-label="Main">
+    <a href="index.html#research">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="members.html">People</a>
+    <a href="index.html#news">News</a>
+    <a href="index.html#join">Join Us</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- the video: a fixed layer behind the opening and the left half of the split -->
+<div class="stage" aria-hidden="true">
+  <img class="stage-poster" src="_shared/scroll/hero_poster.webp" alt="" fetchpriority="high">
+  <canvas class="stage-canvas"></canvas>
+</div>
+
+<!-- left panel (desktop): where you are on the page, always on a solid backing -->
+<div class="panel" id="panel">
+  <nav class="panel-nav" aria-label="Sections on this page" id="panel-nav"></nav>
+  <div class="panel-cap" aria-hidden="true">
+    <span class="cap-num" id="cap-num">01</span>
+    <span class="cap-name" id="cap-name">About</span>
+    <span class="cap-sub" id="cap-sub"></span>
+  </div>
+</div>
+<div class="edge" aria-hidden="true"><i id="edge-fill"></i></div>
+
+<main id="main">
+  <section class="intro" id="top" aria-labelledby="lab-name">
+    <div class="intro-inner">
+      <p class="intro-kicker" id="lab-aff"></p>
+      <h1 class="intro-title" id="lab-name">CCEL</h1>
+      <p class="intro-lead" id="lab-headline"></p>
+    </div>
+  </section>
+
+  <div class="split">
+    <div class="split-spacer" aria-hidden="true"></div>
+    <div class="col">
+
+      <section class="sec" id="about" data-label="About" aria-labelledby="h-about">
+        <header class="sec-head"><span class="sec-num"></span><h2 id="h-about">About the lab</h2></header>
+        <p class="statement" id="tagline"></p>
+        <div class="prose" id="intro"></div>
+        <figure class="plate" id="loop"></figure>
+        <dl class="stats" id="stats"></dl>
+        <details class="ko-box">
+          <summary>About the lab (in Korean)</summary>
+          <p lang="ko" id="about-ko"></p>
+        </details>
+      </section>
+
+      <section class="sec" id="research" data-label="Research" aria-labelledby="h-research">
+        <header class="sec-head"><span class="sec-num"></span><h2 id="h-research">Research</h2></header>
+        <p class="lede" id="areas-lede"></p>
+        <div id="areas"></div>
+      </section>
+
+      <section class="sec" id="publications" data-label="Selected Publications" aria-labelledby="h-pubs">
+        <header class="sec-head"><span class="sec-num"></span><h2 id="h-pubs">Selected Publications</h2></header>
+        <p class="lede">Chosen by the professor, labelled by research area.</p>
+        <div class="cites" id="pins"></div>
+        <div class="covers-block">
+          <div class="row-head"><h3 class="h-small">Journal covers</h3><a class="more" id="covers-more" href="publications.html#covers">All covers</a></div>
+          <div class="marquee" id="marquee"></div>
+        </div>
+        <p class="more-row"><a class="more" href="publications.html" id="all-pubs">Full publication list</a></p>
+      </section>
+
+      <section class="sec" id="highlights" data-label="Recent Highlights" aria-labelledby="h-hl">
+        <header class="sec-head"><span class="sec-num"></span><h2 id="h-hl">Recent Highlights</h2></header>
+        <div class="cites" id="hl"></div>
+        <details class="rules"><summary>How this list is filled</summary><p id="rules"></p></details>
+      </section>
+
+      <section class="sec" id="people" data-label="People" aria-labelledby="h-people">
+        <header class="sec-head"><span class="sec-num"></span><h2 id="h-people">People</h2></header>
+        <div class="prof" id="prof"></div>
+        <dl class="stats stats-4" id="group-counts"></dl>
+        <div class="roster" id="roster"></div>
+        <p class="more-row"><a class="more" href="members.html">All members and alumni</a></p>
+      </section>
+
+      <section class="sec" id="news" data-label="News" aria-labelledby="h-news">
+        <header class="sec-head"><span class="sec-num"></span><h2 id="h-news">News</h2></header>
+        <ol class="news" id="news-list"></ol>
+      </section>
+
+      <section class="sec" id="join" data-label="Join Us" aria-labelledby="h-join">
+        <header class="sec-head"><span class="sec-num"></span><h2 id="h-join">Join Us</h2></header>
+        <p class="eyebrow">Open positions · notice in Korean</p>
+        <p class="ko-notice" lang="ko" id="opening"></p>
+        <p class="join-mail" id="join-mail"></p>
+      </section>
+
+      <section class="sec" id="contact" data-label="Contact" aria-labelledby="h-contact">
+        <header class="sec-head"><span class="sec-num"></span><h2 id="h-contact">Contact</h2></header>
+        <dl class="contact" id="contact-list"></dl>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer class="ft" id="footer"></footer>
+<noscript><p class="nojs">This page renders its content from the lab's data file and needs JavaScript.</p></noscript>
+</body>
+</html>

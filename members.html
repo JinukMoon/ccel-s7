@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People · CCEL · Seoul National University</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="_shared/brand/brand.css">
+<link rel="stylesheet" href="site.css">
+<script src="_shared/content.js" defer></script>
+<script src="common.js" defer></script>
+<script src="members.js" defer></script>
+</head>
+<body class="sub">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <a class="brand" href="index.html" aria-label="CCEL home">
+    <span class="ccel-logo-plate"><img class="ccel-logo" src="_shared/img/logo2.png" alt="CCEL logo" width="200" height="102"></span>
+  </a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><span class="menu-bars" aria-hidden="true"></span>Menu</button>
+  <nav id="nav" class="nav" aria-label="Main">
+    <a href="index.html#research">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="members.html" aria-current="page">People</a>
+    <a href="index.html#news">News</a>
+    <a href="index.html#join">Join Us</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="mast" aria-labelledby="h-people">
+    <div class="mast-media is-photo" id="group-photo"></div>
+    <div class="mast-text">
+      <h1 id="h-people">People</h1>
+      <p class="lede" id="ppl-lede"></p>
+      <dl class="stats" id="ppl-stats"></dl>
+    </div>
+  </section>
+
+  <div class="sheet">
+    <div class="sheet-in">
+      <nav class="subnav" id="subnav" aria-label="Groups"></nav>
+      <section class="grp" id="professor" aria-labelledby="h-prof">
+        <div class="grp-head"><h2 id="h-prof">Professor</h2></div>
+        <div class="prof-full" id="prof"></div>
+      </section>
+      <div class="filter" role="group" aria-label="Filter members by approach">
+        <span>Show</span>
+        <button type="button" data-type="" aria-pressed="true">Everyone</button>
+        <button type="button" data-type="computational" aria-pressed="false">Computational</button>
+        <button type="button" data-type="experimental" aria-pressed="false">Experimental</button>
+      </div>
+      <div id="groups"></div>
+      <section class="grp alumni" id="alumni" aria-labelledby="h-alumni">
+        <div class="grp-head"><h2 id="h-alumni">Alumni</h2><span class="n" id="n-alumni"></span></div>
+        <div id="alumni-groups"></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="ft" id="footer"></footer>
+<noscript><p class="nojs">This page renders its content from the lab's data file and needs JavaScript.</p></noscript>
+</body>
+</html>
