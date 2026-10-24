@@ -15,11 +15,7 @@
   /* ---------- masthead ---------- */
   const gp = D.contact && D.contact.group_photo;
   if (gp) $('#group-photo').innerHTML = `<img src="${esc(asset(gp))}" alt="${esc(D.lab.short)} group photo" width="6944" height="4496" decoding="async">`;
-  const nComp = all.filter(p => p.type === 'computational').length, nExp = all.filter(p => p.type === 'experimental').length;
   $('#ppl-lede').textContent = `Led by Prof. ${D.professor.name}. Member names and details are shown as the lab records them.`;
-  const stat = (n, label) => `<div><dt>${esc(label)}</dt><dd>${esc(n)}</dd></div>`;
-  $('#ppl-stats').innerHTML = stat(all.length, 'Current members') + stat(S.people(alumni), 'Alumni') +
-    stat(nComp, 'Computational') + stat(nExp, 'Experimental');
 
   /* ---------- sub navigation ---------- */
   $('#subnav').innerHTML = `<a href="#professor">Professor</a>` +

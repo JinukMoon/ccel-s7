@@ -9,16 +9,24 @@
   const pubs = S.pubs;
   const covers = D.cover_publications || [];
   const counts = D.publication_counts || {};
-  const by = st => pubs.filter(p => p.status === st).length;
-  const review = by('submitted') + by('in revision');
   const years = [...new Set([...Object.keys(counts).map(Number), ...pubs.map(p => p.year).filter(Boolean)])].sort((a, b) => b - a);
 
   /* ---------- masthead ---------- */
   $('#pub-lede').textContent = `${pubs.length} entries from ${years[years.length - 1]} to ${years[0]}, newest first. ` +
     `Names of CCEL members are set in bold.`;
-  const stat = (n, label) => `<div><dt>${esc(label)}</dt><dd>${esc(n)}</dd></div>`;
-  $('#pub-stats').innerHTML = stat(by('published'), 'Published') + stat(by('in press') + by('accepted'), 'In press') +
-    stat(review, 'Submitted or in revision') + stat(covers.length, 'Journal covers');
+  /* ---------- covers marquee (front covers, data order = newest first; moved from the landing in v5) ---------- */
+  const fronts = covers.filter(c => c.kind === 'front');
+  const shown = fronts.slice(0, 14);
+  const coverItem = (c, hidden) => {
+    const p = S.paperForCover(c);
+    const link = p ? S.paperLink(p) : S.secure(c.url);
+    const label = p ? S.coverAlt(p) : 'Journal cover';
+    return `<a class="mq-item" href="${esc(link)}" target="_blank" rel="noopener"${hidden ? ' tabindex="-1"' : ''}>` +
+      `<img src="${esc(asset(c.image))}" alt="${hidden ? '' : esc(label)}" loading="lazy" decoding="async">` +
+      (p ? `<span>${esc(S.strip(p.journal || ''))} ${esc(p.year || '')}</span>` : '') + `</a>`;
+  };
+  $('#marquee').innerHTML = `<div class="mq-track"><div class="mq-set">${shown.map(c => coverItem(c, false)).join('')}</div>` +
+    `<div class="mq-set" aria-hidden="true">${shown.map(c => coverItem(c, true)).join('')}</div></div>`;
   $('#n-all').textContent = pubs.length;
   $('#n-sel').textContent = (D.curation.selected_pins || []).length;
   $('#n-cov').textContent = covers.length;

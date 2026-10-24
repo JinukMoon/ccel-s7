@@ -156,8 +156,8 @@
         `<div class="ft-col"><p class="ft-h">Address</p><p>${esc(c.address)}</p></div>` +
         `<div class="ft-col"><p class="ft-h">Contact</p><p><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>` +
         `<p>Professor office: ${esc(c.professor_office)}</p><p>Student office: ${esc(c.student_office)}</p></div>` +
-        `<nav class="ft-nav" aria-label="Footer"><a href="index.html#research">Research</a><a href="publications.html">Publications</a>` +
-        `<a href="members.html">People</a><a href="index.html#news">News</a><a href="index.html#join">Join Us</a><a href="index.html#contact">Contact</a></nav>` +
+        `<nav class="ft-nav" aria-label="Footer"><a href="index.html">Welcome</a><a href="members.html#professor">Professor</a>` +
+        `<a href="members.html">Members</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="index.html#contact">Contact</a></nav>` +
         (D.lab.mse_logo ? `<span class="ft-mse"><img src="${esc(asset(D.lab.mse_logo))}" alt="Department of Materials Science and Engineering, Seoul National University" loading="lazy"></span>` : '');
     }
   }

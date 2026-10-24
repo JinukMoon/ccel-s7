@@ -23,11 +23,11 @@
   </a>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><span class="menu-bars" aria-hidden="true"></span>Menu</button>
   <nav id="nav" class="nav" aria-label="Main">
-    <a href="index.html#research">Research</a>
+    <a href="index.html" aria-current="page">Welcome</a>
+    <a href="members.html#professor">Professor</a>
+    <a href="members.html">Members</a>
+    <a href="research.html">Research</a>
     <a href="publications.html">Publications</a>
-    <a href="members.html">People</a>
-    <a href="index.html#news">News</a>
-    <a href="index.html#join">Join Us</a>
     <a href="index.html#contact">Contact</a>
   </nav>
 </header>
@@ -43,8 +43,7 @@
   <nav class="panel-nav" aria-label="Sections on this page" id="panel-nav"></nav>
   <div class="panel-cap" aria-hidden="true">
     <span class="cap-num" id="cap-num">01</span>
-    <span class="cap-name" id="cap-name">About</span>
-    <span class="cap-sub" id="cap-sub"></span>
+    <span class="cap-name" id="cap-name">News</span>
   </div>
 </div>
 <div class="edge" aria-hidden="true"><i id="edge-fill"></i></div>
@@ -54,7 +53,7 @@
     <div class="intro-inner">
       <p class="intro-kicker" id="lab-aff"></p>
       <h1 class="intro-title" id="lab-name">CCEL</h1>
-      <p class="intro-lead" id="lab-headline"></p>
+      <p class="intro-lead" id="tagline"></p>
     </div>
   </section>
 
@@ -62,59 +61,29 @@
     <div class="split-spacer" aria-hidden="true"></div>
     <div class="col">
 
-      <section class="sec" id="about" data-label="About" aria-labelledby="h-about">
-        <header class="sec-head"><span class="sec-num"></span><h2 id="h-about">About the lab</h2></header>
-        <p class="statement" id="tagline"></p>
-        <div class="prose" id="intro"></div>
-        <figure class="plate" id="loop"></figure>
-        <dl class="stats" id="stats"></dl>
-        <details class="ko-box">
-          <summary>About the lab (in Korean)</summary>
-          <p lang="ko" id="about-ko"></p>
-        </details>
-      </section>
-
-      <section class="sec" id="research" data-label="Research" aria-labelledby="h-research">
-        <header class="sec-head"><span class="sec-num"></span><h2 id="h-research">Research</h2></header>
-        <p class="lede" id="areas-lede"></p>
-        <div id="areas"></div>
-      </section>
-
-      <section class="sec" id="publications" data-label="Selected Publications" aria-labelledby="h-pubs">
-        <header class="sec-head"><span class="sec-num"></span><h2 id="h-pubs">Selected Publications</h2></header>
-        <p class="lede">Chosen by the professor, labelled by research area.</p>
-        <div class="cites" id="pins"></div>
-        <div class="covers-block">
-          <div class="row-head"><h3 class="h-small">Journal covers</h3><a class="more" id="covers-more" href="publications.html#covers">All covers</a></div>
-          <div class="marquee" id="marquee"></div>
-        </div>
-        <p class="more-row"><a class="more" href="publications.html" id="all-pubs">Full publication list</a></p>
-      </section>
-
-      <section class="sec" id="highlights" data-label="Recent Highlights" aria-labelledby="h-hl">
-        <header class="sec-head"><span class="sec-num"></span><h2 id="h-hl">Recent Highlights</h2></header>
-        <div class="cites" id="hl"></div>
-        <details class="rules"><summary>How this list is filled</summary><p id="rules"></p></details>
-      </section>
-
-      <section class="sec" id="people" data-label="People" aria-labelledby="h-people">
-        <header class="sec-head"><span class="sec-num"></span><h2 id="h-people">People</h2></header>
-        <div class="prof" id="prof"></div>
-        <dl class="stats stats-4" id="group-counts"></dl>
-        <div class="roster" id="roster"></div>
-        <p class="more-row"><a class="more" href="members.html">All members and alumni</a></p>
-      </section>
-
       <section class="sec" id="news" data-label="News" aria-labelledby="h-news">
         <header class="sec-head"><span class="sec-num"></span><h2 id="h-news">News</h2></header>
         <ol class="news" id="news-list"></ol>
       </section>
 
-      <section class="sec" id="join" data-label="Join Us" aria-labelledby="h-join">
-        <header class="sec-head"><span class="sec-num"></span><h2 id="h-join">Join Us</h2></header>
-        <p class="eyebrow">Open positions · notice in Korean</p>
-        <p class="ko-notice" lang="ko" id="opening"></p>
+      <section class="sec" id="opening" data-label="Open Position" aria-labelledby="h-opening">
+        <header class="sec-head"><span class="sec-num"></span><h2 id="h-opening">Open Position</h2></header>
+        <p class="eyebrow">Recruitment notice · in Korean</p>
+        <p class="ko-notice" lang="ko" id="opening-ko"></p>
         <p class="join-mail" id="join-mail"></p>
+      </section>
+
+      <section class="sec" id="publications" data-label="Selected Publications" aria-labelledby="h-pubs">
+        <header class="sec-head"><span class="sec-num"></span><h2 id="h-pubs">Selected Publications</h2></header>
+        <ol class="pins" id="pins"></ol>
+        <p class="more-row"><a class="more" href="publications.html#selected">Selected publications and recent highlights</a></p>
+      </section>
+
+      <section class="sec" id="about" data-label="About CCEL" aria-labelledby="h-about">
+        <header class="sec-head"><span class="sec-num"></span><h2 id="h-about">About CCEL</h2></header>
+        <p class="eyebrow">Lab introduction · in Korean</p>
+        <p class="ko-notice" lang="ko" id="about-ko"></p>
+        <p class="more-row"><a class="more" href="research.html">Research areas</a></p>
       </section>
 
       <section class="sec" id="contact" data-label="Contact" aria-labelledby="h-contact">
