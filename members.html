@@ -22,17 +22,17 @@
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><span class="menu-bars" aria-hidden="true"></span>Menu</button>
   <nav id="nav" class="nav" aria-label="Main">
     <a href="index.html">Welcome</a>
-    <a href="members.html#professor">Professor</a>
+    <a href="professor.html">Professor</a>
     <a href="members.html" aria-current="page">Members</a>
     <a href="research.html">Research</a>
     <a href="publications.html">Publications</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
 <main id="main">
   <section class="mast" aria-labelledby="h-people">
-    <div class="mast-media is-photo" id="group-photo"></div>
+    <div class="mast-media"><img src="_shared/scroll/hero_poster.webp" alt=""></div>
     <div class="mast-text">
       <h1 id="h-people">Members</h1>
       <p class="lede" id="ppl-lede"></p>
@@ -41,21 +41,24 @@
 
   <div class="sheet">
     <div class="sheet-in">
-      <nav class="subnav" id="subnav" aria-label="Groups"></nav>
-      <section class="grp" id="professor" aria-labelledby="h-prof">
-        <div class="grp-head"><h2 id="h-prof">Professor</h2></div>
-        <div class="prof-full" id="prof"></div>
-      </section>
-      <div class="filter" role="group" aria-label="Filter members by approach">
-        <span>Show</span>
-        <button type="button" data-type="" aria-pressed="true">Everyone</button>
-        <button type="button" data-type="computational" aria-pressed="false">Computational</button>
-        <button type="button" data-type="experimental" aria-pressed="false">Experimental</button>
+      <div class="mem-bar">
+        <div class="views" role="group" aria-label="Members to show">
+          <a class="view-btn" href="#current" data-view="current" aria-current="true">Current members <span class="n" id="n-current"></span></a>
+          <a class="view-btn" href="#alumni" data-view="alumni">Alumni <span class="n" id="n-alumni"></span></a>
+        </div>
+        <nav class="subnav" id="subnav-current" aria-label="Current member groups"></nav>
+        <nav class="subnav" id="subnav-alumni" aria-label="Alumni groups" hidden></nav>
       </div>
-      <div id="groups"></div>
-      <section class="grp alumni" id="alumni" aria-labelledby="h-alumni">
-        <div class="grp-head"><h2 id="h-alumni">Alumni</h2><span class="n" id="n-alumni"></span></div>
+      <div class="filter" role="group" aria-label="Filter members by approach" id="filter"></div>
+
+      <div class="view" id="current">
+        <div id="groups"></div>
+        <p class="view-next"><a class="more" href="#alumni">Alumni: former members and where they are now</a></p>
+      </div>
+      <section class="view alumni" id="alumni" aria-labelledby="h-alumni" hidden>
+        <div class="view-head"><h2 id="h-alumni">Alumni</h2><p>Former members, with their current positions as the lab records them.</p></div>
         <div id="alumni-groups"></div>
+        <p class="view-next"><a class="more back" href="#current">Current members</a></p>
       </section>
     </div>
   </div>

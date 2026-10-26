@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Professor · CCEL · Seoul National University</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="_shared/brand/brand.css">
+<link rel="stylesheet" href="site.css">
+<script src="_shared/content.js" defer></script>
+<script src="common.js" defer></script>
+<script src="professor.js" defer></script>
+</head>
+<body class="sub">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <a class="brand" href="index.html" aria-label="CCEL home">
+    <span class="ccel-logo-plate"><img class="ccel-logo" src="_shared/img/logo2.png" alt="CCEL logo" width="200" height="102"></span>
+  </a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><span class="menu-bars" aria-hidden="true"></span>Menu</button>
+  <nav id="nav" class="nav" aria-label="Main">
+    <a href="index.html">Welcome</a>
+    <a href="professor.html" aria-current="page">Professor</a>
+    <a href="members.html">Members</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="mast mast-prof" aria-labelledby="h-prof">
+    <div class="mast-media is-portrait" id="prof-photo"></div>
+    <div class="mast-text">
+      <p class="eyebrow">Professor</p>
+      <h1 id="h-prof"></h1>
+      <p class="lede" id="prof-lede"></p>
+    </div>
+  </section>
+
+  <div class="sheet">
+    <div class="sheet-in prof-page">
+      <aside class="prof-card" aria-label="Contact" id="prof-card"></aside>
+      <div class="prof-cv">
+        <section class="cv-sec" id="education" aria-labelledby="h-edu">
+          <div class="grp-head"><h2 id="h-edu">Education</h2></div>
+          <ol class="cv-list" id="edu-list"></ol>
+        </section>
+        <section class="cv-sec" id="experience" aria-labelledby="h-exp">
+          <div class="grp-head"><h2 id="h-exp">Experience</h2></div>
+          <div id="exp-list"></div>
+        </section>
+        <section class="cv-sec" id="service" aria-labelledby="h-svc">
+          <div class="grp-head"><h2 id="h-svc">Editorial &amp; Professional Service</h2></div>
+          <ul class="cv-roles cv-svc" id="svc-list"></ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="ft" id="footer"></footer>
+<noscript><p class="nojs">This page renders its content from the lab's data file and needs JavaScript.</p></noscript>
+</body>
+</html>

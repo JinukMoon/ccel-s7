@@ -19,7 +19,8 @@
   /* ---------- section numbers + section index ---------- */
   const secs = $$('.col > .sec');
   secs.forEach((s, i) => { s.dataset.num = pad2(i + 1); $('.sec-num', s).textContent = pad2(i + 1); });
-  set('panel-nav', secs.map(s => `<a href="#${s.id}" data-for="${s.id}"><span>${s.dataset.num}</span>${esc(s.dataset.label)}</a>`).join(''));
+  // "Contact" opens the Contact page (user, 2026-10-26), not the block at the bottom of home
+  set('panel-nav', secs.map(s => `<a href="${s.id === 'contact' ? 'contact.html' : '#' + s.id}" data-for="${s.id}"><span>${s.dataset.num}</span>${esc(s.dataset.label)}</a>`).join(''));
 
   /* ---------- News ---------- */
   set('news-list', (D.welcome.news || []).map(n =>

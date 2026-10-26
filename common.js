@@ -129,6 +129,18 @@
   const people = groups => (groups || []).reduce((n, g) => n + (g.people || []).length, 0);
   const typeLabel = t => (t === 'computational' ? 'Computational' : t === 'experimental' ? 'Experimental' : '');
 
+  // approach marks as on the legacy members page: a flask for experimental, a monitor for computational
+  const TYPE_SVG = {
+    experimental: '<path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M8.5 2.5h7M10 2.5v6.3L4.3 18.4a2.1 2.1 0 0 0 1.8 3.1h11.8a2.1 2.1 0 0 0 1.8-3.1L14 8.8V2.5"/><path fill="currentColor" d="M6.9 15h10.2l1.6 3.1a1 1 0 0 1-.9 1.4H6.2a1 1 0 0 1-.9-1.4z"/>',
+    computational: '<rect x="2.5" y="3.5" width="19" height="13" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8 21h8M12 16.5V21"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="m6 13 3.2-3.6 3 2.2 5.6-5.6"/>'
+  };
+  const typeIcon = (t, withLabel) => TYPE_SVG[t] ?
+    `<svg class="ty-ico ty-${t === 'experimental' ? 'e' : 'c'}" viewBox="0 0 24 24" width="22" height="22" ` +
+    (withLabel ? `role="img" aria-label="${typeLabel(t)}"><title>${typeLabel(t)}</title>` : 'aria-hidden="true" focusable="false">') + `${TYPE_SVG[t]}</svg>` : '';
+
+  // keep hyphenated tokens (phone numbers) on one line
+  const nbsp = s => esc(s).replace(/(\S+-\S+)/g, '<span class="nw">$1</span>');
+
   /* ---------- chrome: menu, compact header, footer ---------- */
   function chrome() {
     const hdr = $('.hdr'), btn = $('.menu-btn'), nav = $('#nav');
@@ -155,9 +167,9 @@
         `<p class="ft-name">${esc(D.lab.name)}</p><p class="ft-aff">${esc(D.lab.affiliation)}</p></div>` +
         `<div class="ft-col"><p class="ft-h">Address</p><p>${esc(c.address)}</p></div>` +
         `<div class="ft-col"><p class="ft-h">Contact</p><p><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>` +
-        `<p>Professor office: ${esc(c.professor_office)}</p><p>Student office: ${esc(c.student_office)}</p></div>` +
-        `<nav class="ft-nav" aria-label="Footer"><a href="index.html">Welcome</a><a href="members.html#professor">Professor</a>` +
-        `<a href="members.html">Members</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="index.html#contact">Contact</a></nav>` +
+        `<p>Professor office: ${nbsp(c.professor_office)}</p><p>Student office: ${nbsp(c.student_office)}</p></div>` +
+        `<nav class="ft-nav" aria-label="Footer"><a href="index.html">Welcome</a><a href="professor.html">Professor</a>` +
+        `<a href="members.html">Members</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="contact.html">Contact</a></nav>` +
         (D.lab.mse_logo ? `<span class="ft-mse"><img src="${esc(asset(D.lab.mse_logo))}" alt="Department of Materials Science and Engineering, Seoul National University" loading="lazy"></span>` : '');
     }
   }
@@ -189,6 +201,6 @@
     D, BASE, $, $$, esc, rich, strip, asset, secure, href, pad2,
     areas, areaOf, areaSummary, pubs, byNo, isOut, frontCover, coverByNo, paperForCover, paperLink,
     authorsHtml, venue, ifTag, statusTag, doiLink, coverAlt, citation,
-    personLinks, splitName, people, typeLabel, icon, chrome, landOnHash, lazyFigures
+    personLinks, splitName, people, typeLabel, typeIcon, icon, iconPath: k => ICONS[k] || '', chrome, landOnHash, lazyFigures
   };
 })();
